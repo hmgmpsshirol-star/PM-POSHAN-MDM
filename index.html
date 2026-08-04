@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="kn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
+<title>P.M.POSHAN,T.P.HUBLI ದೈನಂದಿನ ಹಾಜರಾತಿ ವರದಿ</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0b3d3a">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="MDM ವರದಿ">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Kannada:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1f2d2b;
+  --teal-900:#0b3d3a;
+  --teal-700:#0f5c56;
+  --teal-500:#187a72;
+  --saffron:#e08a2c;
+  --saffron-dark:#c46f16;
+  --cream:#faf6ee;
+  --card:#ffffff;
+  --line:#e2dccd;
+  --good:#2f7d4f;
+  --bad:#c1402e;
+  --shadow: 0 2px 10px rgba(15,40,38,0.08);
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+html{font-family:"Noto Sans Kannada",sans-serif;}
+body, button, input, select, textarea{
+  font-family:"Noto Sans Kannada",sans-serif;
+}
+body{
+  background:
+    radial-gradient(circle at 100% 0%, rgba(224,138,44,0.08), transparent 40%),
+    var(--cream);
+  color:var(--ink);
+  font-size:18px;
+  line-height:1.5;
+  padding-bottom:60px;
+}
+.topbar{
+  background:linear-gradient(135deg,var(--teal-900),var(--teal-700));
+  color:#fff;
+  padding:22px 18px 60px;
+  position:relative;
+  overflow:hidden;
+}
+.topbar::after{
+  content:"";
+  position:absolute;
+  right:-40px; top:-40px;
+  width:180px;height:180px;
+  border-radius:50%;
+  background:rgba(224,138,44,0.25);
+}
+.topbar::before{
+  content:"";
+  position:absolute;
+  left:-30px; bottom:-60px;
+  width:140px;height:140px;
+  border-radius:50%;
+  background:rgba(255,255,255,0.06);
+}
+.topbar h1{
+  margin:0 0 4px;
+  font-size:22px;
+  font-weight:700;
+  position:relative;
+  z-index:1;
+}
+.topbar p{
+  margin:0;
+  font-size:15px;
+  opacity:0.9;
+  position:relative;
+  z-index:1;
+}
+.badge-row{
+  display:flex;
+  gap:8px;
+  margin-top:14px;
+  position:relative;
+  z-index:1;
+  flex-wrap:wrap;
+}
+.badge{
+  background:rgba(255,255,255,0.14);
+  border:1px solid rgba(255,255,255,0.3);
+  border-radius:20px;
+  padding:5px 12px;
+  font-size:13px;
+}
+.wrap{
+  max-width:640px;
+  margin:-38px auto 0;
+  padding:0 14px;
+  position:relative;
+  z-index:2;
+}
+.card{
+  background:var(--card);
+  border-radius:16px;
+  box-shadow:var(--shadow);
+  border:1px solid var(--line);
+  margin-bottom:18px;
+  overflow:hidden;
+}
+.card-head{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:16px 18px;
+  border-bottom:1px solid var(--line);
+  background:linear-gradient(180deg,#fff,#fbf8f1);
+}
+.step-num{
+  flex:0 0 auto;
+  width:36px;height:36px;
+  border-radius:10px;
+  background:var(--teal-700);
+  color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-weight:700;
+  font-size:16px;
+}
+.card-head h2{
+  margin:0;
+  font-size:18px;
+  font-weight:700;
+  color:var(--teal-900);
+}
+.card-head .sub{
+  font-size:13px;
+  color:#6b7b78;
+  margin-top:2px;
+}
+.card-body{padding:18px;}
+.field{margin-bottom:16px;}
+.field label{
+  display:block;
+  font-weight:600;
+  font-size:15px;
+  margin-bottom:6px;
+  color:var(--teal-900);
+}
+select, input[type="date"]{
+  width:100%;
+  padding:14px 12px;
+  font-size:17px;
+  border:2px solid var(--line);
+  border-radius:10px;
+  background:#fff;
+  color:var(--ink);
+  font-family:inherit;
+  appearance:none;
+  -webkit-appearance:none;
+}
+select:focus, input:focus{
+  outline:none;
+  border-color:var(--teal-500);
+  box-shadow:0 0 0 3px rgba(24,122,114,0.15);
+}
+select:disabled{
+  background:#f1efe8;
+  color:#9a9a90;
+}
+.select-wrap{position:relative;}
+.select-wrap::after{
+  content:"▾";
+  position:absolute;
+  right:14px; top:50%;
+  transform:translateY(-50%);
+  pointer-events:none;
+  color:var(--teal-700);
+  font-size:18px;
+}
+.group-title{
+  font-weight:700;
+  color:var(--teal-900);
+  font-size:16px;
+  margin:2px 0 10px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.group-icon{font-size:19px;}
+.row5{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:6px;
+}
+.cell label{
+  display:block;
+  text-align:center;
+  font-size:12.5px;
+  font-weight:700;
+  color:var(--teal-700);
+  margin-bottom:5px;
+  white-space:nowrap;
+}
+.stepper{
+  display:flex;
+  align-items:stretch;
+  border:2px solid var(--line);
+  border-radius:10px;
+  overflow:hidden;
+  background:#fff;
+}
+.stepper button{
+  width:30px;
+  border:none;
+  background:#f1efe8;
+  color:var(--teal-900);
+  font-size:18px;
+  font-weight:700;
+  cursor:pointer;
+  touch-action:manipulation;
+}
+.stepper button:active{background:var(--saffron);color:#fff;}
+.stepper input{
+  width:100%;
+  border:none;
+  text-align:center;
+  font-size:16px;
+  font-weight:700;
+  padding:8px 2px;
+  -moz-appearance:textfield;
+  color:var(--ink);
+  background:transparent;
+}
+.stepper input::-webkit-outer-spin-button,
+.stepper input::-webkit-inner-spin-button{
+  -webkit-appearance:none;margin:0;
+}
+.cell.over .stepper{border-color:var(--bad);}
+.cell.over input{color:var(--bad);}
+@media (max-width:480px){
+  .row5{
+    grid-template-columns:repeat(3,1fr);
+    gap:8px;
+  }
+  .cell{margin-bottom:6px;}
+  .cell label{font-size:13px;}
+  .stepper button{width:36px;font-size:22px;}
+  .stepper input{font-size:21px;padding:10px 2px;}
+}
+.total-line{
+  margin-top:8px;
+  font-size:13px;
+  color:#6b7b78;
+  text-align:right;
+}
+.error-banner{
+  display:none;
+  background:#fdecea;
+  border:1px solid var(--bad);
+  color:var(--bad);
+  padding:12px 14px;
+  border-radius:10px;
+  font-size:14.5px;
+  margin:0 0 16px;
+  font-weight:600;
+}
+.error-banner.show{display:block;}
+.actions{
+  position:sticky;
+  bottom:0;
+  background:linear-gradient(180deg, rgba(250,246,238,0), var(--cream) 30%);
+  padding:14px 14px 8px;
+  max-width:640px;
+  margin:0 auto;
+}
+.btn{
+  display:block;
+  width:100%;
+  padding:16px;
+  font-size:18px;
+  font-weight:700;
+  border:none;
+  border-radius:12px;
+  cursor:pointer;
+  margin-bottom:10px;
+  font-family:inherit;
+}
+.btn-primary{
+  background:linear-gradient(135deg,var(--saffron),var(--saffron-dark));
+  color:#fff;
+  box-shadow:0 4px 14px rgba(196,111,22,0.35);
+}
+.btn-primary:disabled{
+  background:#c9c4b4;
+  box-shadow:none;
+  cursor:not-allowed;
+}
+.btn-secondary{
+  background:#fff;
+  color:var(--teal-900);
+  border:2px solid var(--teal-700);
+}
+.result{
+  display:none;
+  background:#fff;
+  border-radius:16px;
+  border:1px solid var(--line);
+  box-shadow:var(--shadow);
+  padding:18px;
+  margin:0 14px 18px;
+  max-width:612px;
+  margin-left:auto;margin-right:auto;
+}
+.result.show{display:block;}
+.result h3{margin-top:0;color:var(--teal-900);}
+.result pre{
+  white-space:pre-wrap;
+  font-family:inherit;
+  background:#f7f5ee;
+  border-radius:10px;
+  padding:12px;
+  font-size:14.5px;
+  border:1px solid var(--line);
+}
+.result-actions{display:flex;gap:10px;flex-wrap:wrap;}
+.result-actions .btn{flex:1;min-width:140px;margin-bottom:0;}
+.btn-wa{background:#25d366;color:#fff;}
+.btn-copy{background:var(--teal-700);color:#fff;}
+.toast{
+  position:fixed;
+  left:50%; bottom:26px;
+  transform:translateX(-50%);
+  background:var(--teal-900);
+  color:#fff;
+  padding:10px 20px;
+  border-radius:30px;
+  font-size:14px;
+  opacity:0;
+  transition:opacity .25s;
+  pointer-events:none;
+  z-index:50;
+}
+.toast.show{opacity:1;}
+.footer-note{
+  text-align:center;
+  font-size:12.5px;
+  color:#8a8a7e;
+  padding:10px 20px 26px;
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <h1>P.M.POSHAN,T.P.HUBLI ದೈನಂದಿನ ಹಾಜರಾತಿ ವರದಿ</h1>
+  <p>ಹುಬ್ಬಳ್ಳಿ ಗ್ರಾಮೀಣ &amp; ಹುಬ್ಬಳ್ಳಿ ಶಹರ ತಾಲೂಕು</p>
+  <div class="badge-row">
+    <span class="badge">📋 ಎಲ್ಲ ಸರಕಾರಿ ಹಾಗೂ ಅನುದಾನಿತ ಪ್ರಾಥಮಿಕ ಮತ್ತು ಪ್ರೌಢ ಶಾಲೆಗಳು ಖಡ್ಡಾಯವಾಗಿ ಪ್ರತಿ ದಿವಸ ದಾಖಲಿಸಬೇಕು</span>
+    <span class="badge">📱 ಮೊಬೈಲ್ ಸ್ನೇಹಿ</span>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="error-banner" id="errorBanner"></div>
+
+  <!-- STEP 1: School selection -->
+  <div class="card">
+    <div class="card-head">
+      <div class="step-num">1</div>
+      <div>
+        <h2>ಶಾಲೆಯ ವಿವರ</h2>
+        <div class="sub">ತಾಲೂಕು, ಕ್ಲಸ್ಟರ್ ಮತ್ತು ಶಾಲೆ ಆಯ್ಕೆ ಮಾಡಿ</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="field">
+        <label for="taluk">ತಾಲೂಕು</label>
+        <div class="select-wrap">
+          <select id="taluk">
+            <option value="">-- ತಾಲೂಕು ಆಯ್ಕೆ ಮಾಡಿ --</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label for="cluster">ಕ್ಲಸ್ಟರ್</label>
+        <div class="select-wrap">
+          <select id="cluster" disabled>
+            <option value="">-- ಮೊದಲು ತಾಲೂಕು ಆಯ್ಕೆ ಮಾಡಿ --</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label for="school">ಶಾಲೆಯ ಹೆಸರು</label>
+        <div class="select-wrap">
+          <select id="school" disabled>
+            <option value="">-- ಮೊದಲು ಕ್ಲಸ್ಟರ್ ಆಯ್ಕೆ ಮಾಡಿ --</option>
+          </select>
+        </div>
+      </div>
+      <div class="field" style="margin-bottom:0;">
+        <label for="rdate">ದಿನಾಂಕ</label>
+        <input type="date" id="rdate" readonly onkeydown="return false;">
+        <div style="font-size:12.5px;color:#6b7b78;margin-top:6px;">ಇಂದಿನ ದಿನಾಂಕ ಮಾತ್ರ ಅನುಮತಿಸಲಾಗಿದೆ — ಹಿಂದಿನ/ಮುಂದಿನ ದಿನಾಂಕ ನಮೂದಿಸಲು ಅವಕಾಶವಿಲ್ಲ.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 2: Enrollment -->
+  <div class="card">
+    <div class="card-head">
+      <div class="step-num">2</div>
+      <div>
+        <h2>ದಾಖಲಾತಿ</h2>
+        <div class="sub">ಪ್ರತಿ ವರ್ಗದ ಒಟ್ಟು ದಾಖಲಾತಿ ಸಂಖ್ಯೆ</div>
+      </div>
+    </div>
+    <div class="card-body" id="enrollBody"></div>
+  </div>
+
+  <!-- STEP 3: Attendance -->
+  <div class="card">
+    <div class="card-head">
+      <div class="step-num">3</div>
+      <div>
+        <h2>ಹಾಜರಾತಿ</h2>
+        <div class="sub">ಇಂದು ಶಾಲೆಗೆ ಹಾಜರಾದ ಮಕ್ಕಳ ಸಂಖ್ಯೆ</div>
+      </div>
+    </div>
+    <div class="card-body" id="attendBody"></div>
+  </div>
+
+
+  <!-- STEP 5: four groups -->
+  <div class="card">
+    <div class="card-head">
+      <div class="step-num">4</div>
+      <div>
+        <h2>ಫಲಾನುಭವಿಗಳ ವಿವರ</h2>
+        <div class="sub">ಬಿಸಿಯೂಟ, ಕ್ಷೀರ ಭಾಗ್ಯ, ಮೊಟ್ಟೆ, ಬಾಳೆಹಣ್ಣು</div>
+      </div>
+    </div>
+    <div class="card-body" id="extraBody"></div>
+  </div>
+
+</div>
+
+<div class="actions">
+  <button class="btn btn-primary" id="submitBtn">✅ Submit</button>
+</div>
+
+<div class="result" id="resultBox" style="text-align:center;">
+  <h3 style="color:var(--good);">✅ ಯಶಸ್ವಿಯಾಗಿ ಸಲ್ಲಿಕೆಯಾಗಿದೆ</h3>
+</div>
+
+<div class="footer-note">P.M. POSHAN — T.P. HUBLI &nbsp;|&nbsp; MDM ದೈನಂದಿನ ವರದಿ ನಮೂನೆ<br>Designed by PRAVEEN KULKARNI teacher GHPKBS KUSUGAL MOB:9739749483</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const SCHOOL_DATA = {"ಹುಬ್ಬಳ್ಳಿ ಗ್ರಾಮೀಣ": {"ARALIKATTI(2909020001)": ["GHPKBS ARALIKATTI(29090200502)", "GHPKGS ARALIKATTI(29090200501)", "GHPS AGADI(29090200301)", "GHPS CHEBBI(29090201501)", "GHPS CHEBBI(29090201501) RMSA", "GLPS AGADI(29090200302)", "GLPS ARALIKATTI(29090200503)", "GLPS CHEBBI CROSS(29090201502)", "SCS HS ARALIKATTI(29090200506)"], "BAIRIDEVARAKOPPA(2909020002)": ["GHPS BANJAR COLONY GOKUL(29090204807)", "GHPS BHAIRIDEVARAKOPPA(29090205402)", "GHPS GOKUL(29090204806)", "GHPS SAINAGAR(29090205501)", "GHPS SIDDESHWAR ASHRAY COLONY UNKAL(29090206501)", "GHPS UNKAL(29090209902)", "GLPS SADASHIVANAND NAGAR(29090205401)", "GMPS TARIHAL(29090204801)", "GMPS UNKAL HUBLI(29090205502)", "HPS SIDDESHWAR UNKAL(29090205516)", "R.K. KOKATE HS UNKAL(29090205509)", "SHREE S R BOMMAI GHS GOKUL(29090204813)", "SHRI GORAKSHAKNATH HPS GOKUL(29090204808)", "SHRI SHIVANAND HS BHAIRIDEVARKOPPA(29090205419)", "SMT TULASABAI ANIKHINDI HPS SHREENAGAR(29090205412)", "SRI GURU GORAKSHANATH HS GOKUL(29090204815)", "STATE GOVT E E S SC/ST CEL HPS KANNAD TARIHAL(29090204803)", "STATE GOVT E E S SC/ST CEL HS TARIHAL(29090204804)", "VIJAYANAGAR PRACTICING HS UNKAL CROSS(29090205515)"], "BYAHATTI(2909020003)": ["GHPKBS HEBSUR(29090202201)", "GHPKBS KUSUGAL(29090203201)", "GHPKGS BYAHATTI(29090201202)", "GHPKGS HEBSUR(29090202202)", "GHPKGS KUSUGAL(29090203202)", "GHPS KIRESUR(29090202801)", "GHPS KUSUGAL(29090203204)", "GHPS SULLA(29090204701)", "GHS KIRESUR(29090202802)", "GHS KUSUGAL(29090203207)", "GLPS DPEP SULLA(29090204702)", "GLPS HEBSUR(29090202203)", "GLPS JAGADISHNAGAR BYAHATTI(29090201207)", "GLPS KUSUGAL RAILWAY STATION(29090203205)", "GLPS PANCHAYAT BYAHATTI(29090201204)", "GLPS SHANTI NAGAR BYAHATTI(29090201209)", "GMPS BYAHATTI(29090201205)", "HEBSUR HS HEBSUR(29090202205)", "SRI P.M.ROOGI NEW SECONDARY SCHOOL BYAHATTI(29090201210)", "SRI SHIVANAND BHARATI HS SULLA(29090204703)"], "KATNUR(2909020019)": ["DR. AMBEDKAR HS KATNUR(29090202702)", "GHPS BUDARASHINGHI(29090201101)", "GHPS GIRIYAL(29090201801)", "GHPS KARADIKOPPA(29090202601)", "GHPS KATNUR(29090202701)", "GHPS RAMAPUR(29090204201)", "GHPS KURADIKERI(29090203101)", "GHS RMSA KURADIKERI(29090203101) RMSA", "GLPS MAVANUR(29090203501)"], "MANTUR(2909020020)": ["GHPKBS HALYAL(29090202101)", "GHPKBS MANTUR(29090203401)", "GHPKBS MANTUR(29090203401) RMSA", "GHPKGS HALYAL(29090202102)", "GHPKGS MANTUR(29090203402)", "GHPS BHANDIWAD(29090200801)", "GHPS NAGARALLI(29090203701)", "GLPS BHANDIWAD(29090200802)", "GLPS DPEP MANTUR(29090203403)", "HASARADDI GHS HALYAL(29090202104)"], "NAVANAGAR(2909020004)": ["BETHEL HPS KANNADA NAVANAGAR(29090210108)", "GHPS APMC AMARGOL(29090205421)", "GHPS BENGERI(29090206002)", "GHPS GAMANAGATTI(29090205312)", "GHPS HOSAGABBUR(29090209701)", "GHPS SUTAGATTI(29090205232)", "GLPS HALEGABBUR(29090209702)", "GLPS SHIVANAND NAGAR(29090205317)", "GMPS AMARGOL(29090210101)", "HPS BHAGINI NIVEDITA,HPS KANNADA NVGR(29090210105)", "KARNATAKA PUBLIC SCHOOLS GHPS NAVANAGAR(29090210103)", "KARNATAKA PUBLIC SCHOOLS GHS AND PU COLLEGE GOPANAKOPPA(29090205911)", "KARNATAKA PUBLIC SCHOOLS GHS NAVANAGAR HUBLI(29090210112)", "KARNATAKA PUBLIC SCHOOLS GMPS GOPANAKOPPA(29090205908)", "MARUTHI HPS ISHWAR NAGAR(29090205416)", "ROTARY HPS KANNADA BENGERI(29090206005)"], "NOOLVI(2909020005)": ["GHPKBS NOOLVI TQ HUBLI DIST DHARWAD (29090203801)", "GHPKGS NOOLVI(29090203802)", "GHPS KOTAGONDAHUNASHI(29090203001)", "GHPS NOOLVI PLOT(29090203803)", "GHS ADARAGUNCHI(29090200206)", "GKHPS SHEREWAD(29090204501)", "GLPS AKSHARA PLOT SHERAWAD(29090204504)", "GLPS DPEP MURARHALLI(29090203601)", "GLPS SHEREWAD PLOT(29090204502)", "GMPS ADARAGUNCHI(29090200201)", "SJR HS NOOLVI(29090203808)"], "RAYNAL(2909020006)": ["GHPS A.TIMMASAGAR(29090200101)", "GHPS ANCHATAGERI(29090200401)", "GHPS CHANNAPUR(29090201301)", "GHPS CHAVARAGUDDA(29090201401)", "GHPS DEVARAGUDIHAL(29090201601)", "GHPS GANGIWAL(29090201701)", "GHPS PARASAPUR(29090204101)", "GHPS REVADIHAL(29090204401)", "GHS ANCHATAGERI(29090200403)", "GLPS DPEP RAYNAL(29090204302)", "KARNATAKA PUBLIC SCHOOLS GHPS RAYANAL(29090204301)", "KARNATAKA PUBLIC SCHOOLS GHS AND PU COLLEGE RAYNAL(29090204303)"], "SHIRGUPPI(2909020007)": ["GHPKBS KOLIWAD(29090202902)", "GHPKGS KOLIWAD(29090202901)", "GHPS INGALAHALLI(29090202402)", "GHPS MALLIGAWAD(29090203301)", "GHPS UMACHAGI(29090205001)", "GHS KOLIWAD(29090202906)", "GLPS DPEP SHIRAGUPPI(29090204602)", "GLPS KOLIWAD(29090202905)", "GMPS INGALAHALLI(29090202401)", "GMPS SHIRAGUPPI(29090204601)", "PANDIT NEHARU HS SHIRAGUPPI(29090204605)", "SHRI MRUTYUNJAY HS INGALAHALLI(29090202405)"], "URDU HUBLI(2909020016)": ["GHPS URDU CHEBBI(29090201503)", "GHPS URDU NOOLVI(29090203804)", "GHPS URDU SHEREWAD(29090204503)", "GHPS URDU RMSA ARALIKATTI(29090200505)(1 TO 7)", "GHS URDU RMSA ARALIKATTI(29090200505)RMSA (8 TO 10)", "GLPS URDU ADARAGUNCHI(29090200203)", "GLPS URDU ANCHATAGERI(29090200402)", "GLPS URDU CHANNAPUR(29090201302)", "GLPS URDU HALYAL(29090202103)", "GLPS URDU KOLIWAD(29090202903)", "GLPS URDU MANTUR(29090203404)", "GLPS URDU REVADIHAL(29090204402)", "GLPS URDU SHIRAGUPPI(29090204603)"], "URDU NAVANAGAR(2909020015)": ["GHPS URDU AMARGOL(29090205202)", "GHPS URDU BHAIRIDEVARAKOPPA(29090205403)", "GHPS URDU GAMANAGATTI(29090205302)", "GHPS URDU GOPANAKOPPA(29090205907)", "GHPS URDU KUSUGAL(29090203203)", "GHPS URDU TAJ NAGAR UNKAL(29090205431)", "GHPS URDU TARIHAL(29090204802)", "GLPS URDU BENGERI(29090206001)", "GLPS URDU BYAHATTI(29090201203)", "GLPS URDU NAVANAGAR(29090205305)"], "VARUR(2909020018)": ["GHPS BELAGALI(29090200601)", "GHPS BOMMASAMUDRA(29090201001)", "GHPS KAMPLIKOPPA(29090202501)", "GHPS PALE(29090203901)", "GHPS PALIKOPPA(29090204001)", "GHPS TIRUMALAKOPPA(29090204901)", "GHPS VARUR(29090205101)", "GHS BELAGALI(29090200602)", "GLPS INAM VEERAPUR(29090202301)", "GLPS VARUR(29090205102)", "SRI RGV HS TIRUMALAKOPPA(29090204902)", "SUJS HS VARUR(29090205105)"]}, "ಹುಬ್ಬಳ್ಳಿ ಶಹರ": {"ANAND NAGAR HBL(2909060012)": ["AMAR JAWAN HPS GURUNATH NAGAR OLD HU(29090603915)", "DURGAMBIKA JAYAPRAKASH HPS OLD HUBLI(29090603929)", "GHPS ANAND NAGAR HUBLI(29090603818)", "GHPS HEGGERI HALEHUBLI(29090604111)", "GHPS KSRTC RAJADHANI COLONY(29090604017)", "GHPS MANJUNATH NAGAR HUBLI(29090603816)", "GHPS NAVA ANAND NAGAR HUBLI(29090603928)", "GHS ANAND NAGAR(29090603810)", "MANJUNATH H S HEGGERI(29090604107)", "NATIONAL SPORTS RESI H S BOYS(29090603906)", "RANI CHENNAMMA GIRLS RESI HS GIRLS(29090603907)", "REVAN SIDDHESHWAR HPS KANNADA SHIDDAROAD NAGAR(29090603912)"], "BAHARBAAD URDU HBL(2909060010)": ["FATEH HPS URDU KARAVAR ROAD(29090604119)", "GHPS NO.2 URDU BAHARBAD(29090604208)", "GHPS NO.7 URDU BOYS BEERABAND ONI HBL(29090606109)", "GHS URDU RMSA ANAND NAGAR , HUBLI(29090603812)", "GHS URDU RMSA ANAND NAGAR , HUBLI(29090603812)", "GLPS ASAR ONI HALEHUBLI(29090604209)", "GLPS URDU HEGGERI HALEHUBLI(29090604010)", "GMUBS NARAYAN SOFA HALEHUBLLI(29090604305)", "HAZARAT SAYED FATESHAWALI HS GIRLS HEGGERI(29090603904)"], "BASAVESHWAR NAGAR HBL(2909060013)": ["BVK BATLE H S LINGARAJ NAGAR(29090603526)", "GHPS BASAVESHWAR NAGAR(29090603621)", "GHPS GANDHI NAGAR(29090603736)", "GHPS NEKAR COLONY VIDYA NAGAR(29090603543)", "GHPS RAM MOHAN LOHIYA NAGAR(29090603728)", "GHPS RAMALINGESHWAR NAGAR(29090603615)", "GLPS HANUMATHNAGAR(29090603542)", "SHRI RAMALINGESHWAR HIGH SCHOOL(29090603623)", "SHRI RAMALINGESHWAR HPS KANNADANDA BOYS HUBBALLI(29090603622)", "VEMAN VIDYAVARDHAK SANGH HIGH SCHOOL HUBLI(29090603734)", "VISHWABHARATI HS GIRLS UNKAL CROSS(29090602501)"], "BIDNAL HBL(2909060017)": ["AKKAMAHADEVI H S GIRLS VEERAPUR ONI(29090605609)", "BES H S BANKAPUR CHOUK(29090605808)", "GHPS MODEL NO.4 KANNADA BOYS VEERAPUR ONI HUBLI(29090605606)", "GHPS NO.12 BANKAPUR CHOUK HUBLI(29090605807)", "GHPS NO.18 YALLAPUR ONI HUBLI(29090605705)", "GHPS NO.4 KANNADA GIRLS VEERAPUR ONI HUBLI(29090605706)", "GHPS SONIYAGADHINAGAR BIDNAL HUBLI(29090606704)", "KARNATAKA PUBLIC SCHOOLS KPS BIDNAL , HUBLI CITY(29090606604)", "KARNATAKA PUBLIC SCHOOLS R.K PATIL GHS BIDNAL HUBLI(29090606705)"], "GHANTIKERI HBL(2909060014)": ["GHPS MODEL NO.1 KANNADA GIRLS GHANTIGERI(29090605604)", "GHPS MODEL NO.3 AKKIHONDA(29090605508)", "GHPS MODEL NO.5 KANNADA BOYS GHANTIGERI(29090605013)", "GHPS VALLABHAI NAGAR HUBLI(29090605007)", "GLPS KANNADA SUNNAD BATTI(29090605006)", "KARNATAKA NATIONAL ENGLISH HS GHANTIKERI(29090604912)", "KARNATAKA NATIONAL ENGLISH LPS GANTIKERI(29090605009)", "KES KANNADA/TELUGU HPS MANTUR ROAD(29090605005)", "KNE HPS GHANTIKERI(29090605017)", "KRUPADANAM HIGH SCHOOL(29090605015)", "MODEL GHPS NO.5 KANNADA GIRLS AKKIHONDA(29090605507)", "RAJASTHAN HINDHI VIDHYALAY(29090605010)"], "HALE HUBLI HBL(2909060008)": ["BRAHMANAND HS SADASHIVNAGAR(29090606322)", "DR.BRAHMANAND HPS SADASHIVANAGAR OLD HUBLI(29090606317)", "GHPS KANNADA GIRLS CHENNAPET(29090604205)", "GHPS NO.20 CHENNAPET HUBLI(29090604306)", "GHPS NO.3 KANNADA GIRLS HALEHUBLI(29090606008)", "GHPS RANADAMMAN COLONY NEKAR NAGAR ROAD HUBLI(29090606514)", "GHPS SADASHIVA NAGAR HALEHUBLI(29090606306)", "GLPS BMT AKKIPET(29090606102)", "GLPS SHIVASHAKTI NAGAR OLD HUBLI(29090606302)", "JAI BHARAT HPS KANNADA HUBLI(29090606114)", "JIVESHWAR HPS KANNDA GIRLS HUBLI(29090604113)", "LATE T.B.SHALDAR GHPS AVARADI ONI(29090604103)", "MARKANDEYA H S NEKAR NAGAR(29090606323)", "MKBS NO.1 HALEHUBLI(29090604003)", "NEW ENGLISH SCHOOL PB ROAD HUBLI(29090606004)", "SHRI JIHVESHWAR GIRLS HIGH SCHOOL CHANNAPET OLD HUBBALLI (29090604106)", "VINAYAK HPS KANNADA NEKAR NAGAR(29090606316)"], "HOSUR HUBLI(2909060007)": ["CITY H S VIJAY NAGAR(29090603309)", "CITY HPS KANNADANDA HUBLI(29090603304)", "CITY RESHMI HS KESWAPUR(29090603214)", "GHPS KANNADA BOYS CHAMUNDESHWARI NAGAR(29090602810)", "GHPS MODEL NO.16 HOSUR(29090604606)", "GHPS NO.13 ASHOK NAGAR(29090602812)", "GHPS VISHESHWAR NAGAR(29090602803)", "GHS HOSUR HUBLI(29090604608)", "GHS VISHWESHWAR NAGAR(29090602814)", "GLPS GIRINICHAL HUBLI(29090604302)", "JANATA H S NRUPATUNGA BETTA(29090602813)", "KLE AIDED KANNADANDA BOYS PRIMARY SCHOOL VIDYA NAGAR(29090602909)", "KLE SOC HFK HS KANNADA VIDYANAGAR(29090602907)", "MAHILA VIDYA PEETH H S VIDYA NAGAR(29090603408)", "MAHILA VIDYA PEETH HPS HOSUR(29090604406)", "RESHMI HPS KANNADA KESHWAPUR(29090603212)", "SHRI VIGHNESHWARA HIGH SCHOOL .(29090602806)", "SIDDARAMESHWAR HS VIJAY NAGAR(29090603311)", "VIGNESHWAR AIDED HPS VIJAY NAGAR(29090603312)"], "INDIPUMP HBL(2909060016)": ["CHETANA HPS KANNADA(29090606108)", "GHPS ISHWARNAGAR(29090606511)", "GHPS MODEL NO.19 INDIPAMP HALEHUBLI(29090606113)", "GHPS NAVA AYODHYA NAGAR HALEHBL(29090606202)", "GHPS NEKAR NAGAR HUBLI(29090606607)", "GHPS NO.9 VIDHYUT NAGAR HUBLI(29090606203)", "GHPS SM KRISHNA NAGAR(29090606513)", "GHS NEKAR NAGAR HUBLI(29090606314)", "GLPS CHABBI PLOT(29090606608)", "GLPS SHIVASHANKAR COLONY KARWARROAD(29090606207)", "GOUTAM HS AYODYANAGAR OLD HUBLI(29090606211)", "GURUDEV VIDYA SAMITI HPS KAN HUBLI(29090606206)", "SHIVAPPANNA JIGALUR HIGH SCHOOL (29090603927)", "SIDDARUDHA HS KARAVAR ROAD(29090606212)"], "NAGASHETTIKOPPA HBL(2909060015)": ["CONVENT HIGH SCHOOL KESHWAPUR HUBLI.(29090603108)", "FATIMA HS KESHWAPUR HBBALLI(29090603110)", "GHPS SANTOSH NAGAR(29090602821)", "GHPS SHIRADI NAGAR HUBLI(29090602811)", "GHPS TELUGU GANDHIWAD HUBLI(29090604807)", "GLPS SHABHARI NAGAR MOTHER TERESA COLONY(29090604815)", "GMPS NAGASHETTIKOPPA NO.15 RMSA UPGRADED(29090603211)", "GMPS NAGASHETTIKOPPA NO.15 RMSA UPGRADED(29090603211)", "HARIJAN HPS KANNDA GIRLS RAM NAGAR(29090603202)", "RAILWAY HIGH SCHOOL HUBBALLI(29090604202)", "ST. MARY ENGLISH MED HS KESHWAPUR(29090603111)", "ST. MARYS KANNADA HIGHER PRIMARY SCHOOL KESHWAPUR(29090603001)", "ST. MICHAEL H S KESHWAPUR(29090603003)", "ST. PETERS HS HUBBALLI(29090604910)", "UNITED ANDRA ASSOCIATION HIGH SCHOOL (29090604812)", "UNITEDANDRA TELUGU HPS HUBBALLI(29090604804)", "VIJAYNAGAR HS(29090603006)"], "PENDARGALLI HUBLI(2909060009)": ["BASEL MISSION H S GIRLS KARWAR ROAD(29090604502)", "BASEL MISSION HIGHER SECONDARY SCHOOL HUBLI (29090605419)", "BASEL MISSION HPS GIRLS(29090605410)", "BASEL MISSION PEROKIYAL HPS KANNADA BOYS(29090605409)", "DURGA DEVI H S KANNADA DAJIBANPETH(29090605311)", "GHPS KANNADA BOYS MURUSAVIRAMATH HUBLI(29090605413)", "GHPS MODEL KANNADA BOYS GANESHPET HUBLI(29090605102)", "GHPS MODEL NO.2 KANNADA GIRLS PENDARAGALLI(29090605310)", "GHPS MODEL NO.6 KAMARIPET(29090605315)", "GHPS MODEL NO.7 KOULPET(29090605411)", "GHPS NO.1 MARATHI HOSAKILLA HUBLI(29090605205)", "GHPS NO.6 JANATA BAJAR HUBLI(29090605416)", "GHPS NO.7 KANNADA GIRLS GANESHPET HUBLI(29090605103)", "GHS PENDARGALLI(29090605313)", "HARIJAN HPS KANNADANDA BOYS RAJAGOPAL NAGAR(29090604908)", "KARNNTAKA TARUN MARATHA MANDAL HPS MARATAGALLI(29090605206)", "LAMINGTON BOYS HIGH SCHOOL(29090604708)", "LAMINGTON GIRLS HIGH SCHOOL(29090604709)", "M H P S BROADWAY HUBLI(29090605427)", "NAVAJEEVAN HS GIRANICHAL(29090604501)", "SHRI JAGADGURU GANGADHAR HS BOYS MOORUSAVIRAMATH COMPOUND(29090605316)", "SMT SUDHA R SHETTI GIRLS HS MOORASAVIRMATH HUBLI(29090605420)", "SRI JAGADAGURU GANGADHAR HPS MOORUSAVIRMATH COMPOUND(29090605418)"], "SADASHIVNAGAR(2909060018)": ["AL HAYAT HPS URDU ISLAMAPUR HBL(29090606506)", "GHPS NO.3 URDU GIRLS KASABAPET(29090606006)", "GHPS NO.6 URDU BOYS KASABAPET(29090606005)", "GHPS URDU ALTAF NAGAR HALEHUBLI(29090606509)", "GHPS URDU KILLA HALEHUBLI(29090604207)", "GHPS URDU NAVAANAND NAGAR HALEHBL(29090603813)", "GHPS URDU RAMALINGESHWAR NAGAR(29090603614)", "GHPS URDU SADASHIVA NAGAR(29090606313)", "GHPS URDU SM KRISHNA NAGAR(29090606510)", "GHPS URDU TIPPU NAGAR HALEHUBLI(29090606324)", "GHPUS BANATI KATTA HUBLI(29090606404)", "GHS URDU SADASHIVNAGAR(29090606310)", "GLPS URDU ISHWAR NAGAR(29090606508)", "MAHABUB HPS URDU ANAND NAGAR(29090603814)"], "TABIBLAND URDU HBL(2909060011)": ["ALMEELAD H S URDU KESHWAPUR(29090603210)", "ANGLO URDU GIRLS HIGH SCHOOL KOUL PETH P.B. ROAD HUBLI(29090605408)", "ANGLO URDU H S BOYS GHANTIKERI(29090605004)", "GHPS NO.1 URDU BOYS GARDEN PETH(29090605506)", "GHPS NO.1 URDU GIRLS TABEEBLAND(29090605204)", "GHPS NO.2 URDU GIRLS KOULPET HUBLI(29090605407)", "GHPS NO.3 URDU YALLAPUR ONI(29090605704)", "GHPS NO.4 URDU GANESH PET(29090605208)", "GHPS NO.4 URDU GIRLS YALLAPUR ONI(29090605703)", "GHPS NO.5 URDU BOYS KOUL PETH HUBLI(29090605406)", "GHPS NO.5 URDU GIRLS GARDEN PET(29090605505)", "GHPS NO.8 URDU NAGASHETTIKOPPA(29090603213)", "GHPS URDU GUDSHED ROAD(29090605019)", "GLPS BYALI PLOT MANTUR ROAD(29090604813)", "IQRA HPS URDU KARAVAR ROAD(29090605023)", "RIYAZUL ULOOM URDU HPS MANGLAVAR PET(29090605024)"]}};
+
+const CATS = [
+  {key:"lkg", label:"LKG"},
+  {key:"ukg", label:"UKG"},
+  {key:"c1_5", label:"1-5"},
+  {key:"c6_8", label:"6-8"},
+  {key:"c9_10", label:"9-10"}
+];
+
+const GROUPS = [
+  {id:"enroll", prefix:"enr", icon:"🧾", title:"ದಾಖಲಾತಿ", container:"enrollBody", single:true},
+  {id:"attend", prefix:"att", icon:"🙋", title:"ಹಾಜರಾತಿ", container:"attendBody", single:true},
+];
+
+const EXTRA_GROUPS = [
+  {id:"meal", prefix:"meal", icon:"🍛", title:"ಬಿಸಿಯೂಟ ಫಲಾನುಭವಿಗಳು"},
+  {id:"milk", prefix:"milk", icon:"🥛", title:"ಕ್ಷೀರ ಭಾಗ್ಯ"},
+];
+
+// ಇವು ಹಾಜರಾತಿಯಿಂದ ಸ್ವಯಂ ಪ್ರತಿ ಆಗುವುದಿಲ್ಲ — ಯಾವಾಗಲೂ ಪ್ರತ್ಯೇಕವಾಗಿ, ಡಿಫಾಲ್ಟ್ 0 ಆಗಿ ನಮೂದಿಸಬೇಕು
+const INDEPENDENT_GROUPS = [
+  {id:"egg", prefix:"egg", icon:"🥚", title:"ಮೊಟ್ಟೆ"},
+  {id:"banana", prefix:"banana", icon:"🍌", title:"ಬಾಳೆಹಣ್ಣು"},
+];
+
+function buildRow5(prefix){
+  let html = '<div class="row5">';
+  CATS.forEach(c=>{
+    html += `
+    <div class="cell" id="cell_${prefix}_${c.key}">
+      <label>${c.label}</label>
+      <div class="stepper">
+        <button type="button" tabindex="-1" data-act="dec" data-target="${prefix}_${c.key}">−</button>
+        <input type="number" inputmode="numeric" min="0" value="0" id="${prefix}_${c.key}" data-prefix="${prefix}" data-cat="${c.key}">
+        <button type="button" tabindex="-1" data-act="inc" data-target="${prefix}_${c.key}">+</button>
+      </div>
+    </div>`;
+  });
+  html += '</div>';
+  return html;
+}
+
+// Build enrollment + attendance
+document.getElementById('enrollBody').innerHTML =
+  '<div class="group-title"><span class="group-icon">🧾</span> ವರ್ಗವಾರು ದಾಖಲಾತಿ</div>' + buildRow5('enr');
+
+document.getElementById('attendBody').innerHTML =
+  '<div class="group-title"><span class="group-icon">🙋</span> ವರ್ಗವಾರು ಹಾಜರಾತಿ</div>' + buildRow5('att') +
+  '<div class="total-line" id="attTotalLine"></div>';
+
+// Build extra groups (meal, milk) — these can lock to attendance
+let extraHtml = "";
+EXTRA_GROUPS.forEach(g=>{
+  extraHtml += `<div class="group-block" id="block_${g.prefix}" style="margin-bottom:18px;">
+    <div class="group-title"><span class="group-icon">${g.icon}</span> ${g.title}</div>
+    ${buildRow5(g.prefix)}
+  </div>`;
+});
+// Independent groups (egg, banana) — always entered separately, never copied from attendance
+INDEPENDENT_GROUPS.forEach(g=>{
+  extraHtml += `<div class="group-block" id="block_${g.prefix}" style="margin-bottom:18px;">
+    <div class="group-title"><span class="group-icon">${g.icon}</span> ${g.title}</div>
+    ${buildRow5(g.prefix)}
+  </div>`;
+});
+document.getElementById('extraBody').innerHTML = extraHtml;
+
+// ---- Populate taluk dropdown ----
+const talukSel = document.getElementById('taluk');
+const clusterSel = document.getElementById('cluster');
+const schoolSel = document.getElementById('school');
+
+Object.keys(SCHOOL_DATA).forEach(t=>{
+  const opt = document.createElement('option');
+  opt.value = t; opt.textContent = t;
+  talukSel.appendChild(opt);
+});
+
+talukSel.addEventListener('change', ()=>{
+  clusterSel.innerHTML = '<option value="">-- ಕ್ಲಸ್ಟರ್ ಆಯ್ಕೆ ಮಾಡಿ --</option>';
+  schoolSel.innerHTML = '<option value="">-- ಮೊದಲು ಕ್ಲಸ್ಟರ್ ಆಯ್ಕೆ ಮಾಡಿ --</option>';
+  schoolSel.disabled = true;
+  if(!talukSel.value){ clusterSel.disabled = true; return; }
+  clusterSel.disabled = false;
+  Object.keys(SCHOOL_DATA[talukSel.value]).forEach(c=>{
+    const opt = document.createElement('option');
+    opt.value = c; opt.textContent = c;
+    clusterSel.appendChild(opt);
+  });
+});
+
+clusterSel.addEventListener('change', ()=>{
+  schoolSel.innerHTML = '<option value="">-- ಶಾಲೆ ಆಯ್ಕೆ ಮಾಡಿ --</option>';
+  if(!clusterSel.value){ schoolSel.disabled = true; return; }
+  schoolSel.disabled = false;
+  SCHOOL_DATA[talukSel.value][clusterSel.value].forEach(s=>{
+    const opt = document.createElement('option');
+    opt.value = s; opt.textContent = s;
+    schoolSel.appendChild(opt);
+  });
+});
+
+// ---- Date field: today's date only, no past/future dates allowed ----
+function todayStr(){
+  const d = new Date();
+  const yyyy = d.getFullYear();
+  const mm = String(d.getMonth()+1).padStart(2,'0');
+  const dd = String(d.getDate()).padStart(2,'0');
+  return `${yyyy}-${mm}-${dd}`;
+}
+function setTodayDate(){
+  const rdate = document.getElementById('rdate');
+  const t = todayStr();
+  rdate.min = t;
+  rdate.max = t;
+  rdate.value = t;
+}
+setTodayDate();
+// Safety net: if anything ever changes the date away from today, snap it back
+document.getElementById('rdate').addEventListener('change', ()=>{
+  const rdate = document.getElementById('rdate');
+  if(rdate.value !== todayStr()){
+    rdate.value = todayStr();
+  }
+});
+
+// ---- Number boxes: direct typing + easy overwrite ----
+document.addEventListener('focus', (e)=>{
+  if(e.target.tagName === 'INPUT' && e.target.type === 'number'){
+    e.target.select();
+  }
+}, true);
+
+// Enter key on a number box also moves to the next box (like Tab)
+document.addEventListener('keydown', (e)=>{
+  if(e.key === 'Enter' && e.target.tagName === 'INPUT' && e.target.type === 'number'){
+    e.preventDefault();
+    const focusable = Array.from(document.querySelectorAll('input[type="number"]'));
+    const idx = focusable.indexOf(e.target);
+    if(idx > -1 && idx < focusable.length - 1){
+      focusable[idx+1].focus();
+    } else {
+      e.target.blur();
+    }
+  }
+});
+
+// ---- Stepper +/- buttons ----
+document.addEventListener('click', (e)=>{
+  const btn = e.target.closest('button[data-act]');
+  if(!btn) return;
+  const input = document.getElementById(btn.dataset.target);
+  if(!input || input.readOnly) return;
+  let v = parseInt(input.value||"0",10);
+  if(btn.dataset.act === 'inc') v++;
+  else v = Math.max(0, v-1);
+  input.value = v;
+  input.dispatchEvent(new Event('input', {bubbles:true}));
+});
+
+// ---- All beneficiary numbers are now entered manually (no auto-copy from attendance) ----
+document.addEventListener('input', (e)=>{
+  validateAll();
+});
+
+// ---- Validation: nothing may exceed ದಾಖಲಾತಿ (enrollment) ----
+function validateAll(){
+  let hasError = false;
+  let msgs = [];
+  let attTotal = 0, enrTotal = 0;
+
+  CATS.forEach(c=>{
+    const enrEl = document.getElementById('enr_'+c.key);
+    const enrVal = parseInt(enrEl.value||"0",10);
+    enrTotal += enrVal;
+
+    const checkPrefixes = ['att','meal','milk','egg','banana'];
+    checkPrefixes.forEach(p=>{
+      const el = document.getElementById(p+'_'+c.key);
+      if(!el) return;
+      const val = parseInt(el.value||"0",10);
+      const cell = document.getElementById('cell_'+p+'_'+c.key);
+      if(val > enrVal){
+        cell.classList.add('over');
+        hasError = true;
+      } else {
+        cell.classList.remove('over');
+      }
+      if(p==='att') attTotal += val;
+    });
+  });
+
+  document.getElementById('attTotalLine').textContent =
+    'ಒಟ್ಟು ಹಾಜರಾತಿ: ' + attTotal + ' / ಒಟ್ಟು ದಾಖಲಾತಿ: ' + enrTotal;
+
+  const banner = document.getElementById('errorBanner');
+  if(hasError){
+    banner.textContent = '⚠️ ಕೆಂಪು ಬಣ್ಣದಲ್ಲಿ ತೋರಿಸಿರುವ ಸಂಖ್ಯೆಗಳು ದಾಖಲಾತಿಗಿಂತ ಹೆಚ್ಚಾಗಿವೆ. ದಯವಿಟ್ಟು ಸರಿಪಡಿಸಿ.';
+    banner.classList.add('show');
+  } else {
+    banner.classList.remove('show');
+  }
+  document.getElementById('submitBtn').disabled = hasError;
+  return !hasError;
+}
+validateAll();
+
+// ---- Google Sheet ಗೆ ಡಾಟಾ ಕಳಿಸಲು ----
+// ಇಲ್ಲಿ ನಿಮ್ಮ Google Apps Script Web App URL ಅನ್ನು ಹಾಕಿ (ಸೆಟಪ್ ಸೂಚನೆ ಕೆಳಗೆ ನೀಡಲಾಗಿದೆ)
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbylrOHsJPONr_4yIQzriCFRMvQ0jlPSxIpEqGZJ6d5anOaeetaETAU5YALjh3vrch5sIA/exec";
+
+function buildDataObject(){
+  const taluk = talukSel.value, cluster = clusterSel.value, school = schoolSel.value, date = document.getElementById('rdate').value;
+  const data = {
+    timestamp: new Date().toISOString(),
+    date: date,
+    taluk: taluk,
+    cluster: cluster,
+    school: school
+  };
+  ['enr','att','meal','milk','egg','banana'].forEach(p=>{
+    CATS.forEach(c=>{
+      data[p+'_'+c.key] = document.getElementById(p+'_'+c.key).value || 0;
+    });
+  });
+  return data;
+}
+
+function sendToGoogleSheet(data){
+  return fetch(GOOGLE_SCRIPT_URL, {
+    method: 'POST',
+    mode: 'cors',
+    headers: {'Content-Type': 'text/plain;charset=utf-8'},
+    body: JSON.stringify(data)
+  }).then(res => res.json());
+}
+
+// ---- Submit / form reset ----
+function resetForm(){
+  // ಎಲ್ಲಾ ಸಂಖ್ಯೆ ಪೆಟ್ಟಿಗೆಗಳನ್ನು 0 ಗೆ ಮರುಹೊಂದಿಸಿ
+  document.querySelectorAll('.card-body input[type="number"]').forEach(inp=>{ inp.value = 0; });
+
+  // ದಿನಾಂಕ ಮತ್ತೆ ಇಂದಿನ ದಿನಾಂಕಕ್ಕೆ (ಇಂದಿನ ದಿನಾಂಕ ಮಾತ್ರ ಅನುಮತಿ)
+  setTodayDate();
+
+  validateAll();
+}
+
+document.getElementById('submitBtn').addEventListener('click', ()=>{
+  if(!talukSel.value || !clusterSel.value || !schoolSel.value){
+    alert('ದಯವಿಟ್ಟು ತಾಲೂಕು, ಕ್ಲಸ್ಟರ್ ಮತ್ತು ಶಾಲೆ ಆಯ್ಕೆ ಮಾಡಿ.');
+    return;
+  }
+  if(!validateAll()){
+    alert('ದಯವಿಟ್ಟು ಕೆಂಪು ಬಣ್ಣದ ತಪ್ಪುಗಳನ್ನು ಸರಿಪಡಿಸಿ.');
+    return;
+  }
+
+  const date = document.getElementById('rdate').value;
+  const submittedKey = 'mdm_submitted::' + schoolSel.value + '::' + date;
+
+  // ಈ ಬ್ರೌಸರ್/ಫೋನ್‌ನಿಂದ ಈ ಶಾಲೆ-ದಿನಾಂಕಕ್ಕೆ ಈಗಾಗಲೇ ಸಲ್ಲಿಸಿದ್ದರೆ ತಕ್ಷಣ ಎಚ್ಚರಿಸಿ
+  if(localStorage.getItem(submittedKey)){
+    alert('⚠️ ಈ ಶಾಲೆಯ ' + date + ' ದಿನಾಂಕದ ವರದಿ ಈಗಾಗಲೇ ಸಲ್ಲಿಕೆಯಾಗಿದೆ. ಒಂದು ದಿನಾಂಕಕ್ಕೆ ಒಂದೇ ಬಾರಿ ಮಾತ್ರ ವರದಿ ಸಲ್ಲಿಸಲು ಅವಕಾಶವಿದೆ.');
+    return;
+  }
+
+  const submitBtn = document.getElementById('submitBtn');
+  const originalLabel = submitBtn.textContent;
+  submitBtn.disabled = true;
+  submitBtn.textContent = '⏳ Submitting...';
+
+  const data = buildDataObject();
+
+  sendToGoogleSheet(data)
+    .then(res => {
+      if(res && res.result === 'duplicate'){
+        alert('⚠️ ಈ ಶಾಲೆಯ ' + date + ' ದಿನಾಂಕದ ವರದಿ ಈಗಾಗಲೇ Google Sheet ನಲ್ಲಿ ದಾಖಲಾಗಿದೆ. ಒಂದು ದಿನಾಂಕಕ್ಕೆ ಒಂದೇ ಬಾರಿ ಮಾತ್ರ ವರದಿ ಸಲ್ಲಿಸಲು ಅವಕಾಶವಿದೆ.');
+        localStorage.setItem(submittedKey, '1');
+        return;
+      }
+      localStorage.setItem(submittedKey, '1');
+      document.getElementById('resultBox').classList.add('show');
+      document.getElementById('resultBox').scrollIntoView({behavior:'smooth', block:'start'});
+      showToast('✅ ವರದಿ Google Sheet ಗೆ ಸಲ್ಲಿಕೆಯಾಗಿದೆ');
+      resetForm();
+    })
+    .catch(err => {
+      console.error(err);
+      alert('⚠️ Google Sheet ಗೆ ಡಾಟಾ ಕಳಿಸುವಲ್ಲಿ ದೋಷ ಉಂಟಾಗಿದೆ. ದಯವಿಟ್ಟು ಇಂಟರ್ನೆಟ್ ಪರಿಶೀಲಿಸಿ ಮತ್ತೊಮ್ಮೆ Submit ಒತ್ತಿ.');
+    })
+    .finally(()=>{
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalLabel;
+    });
+});
+
+function showToast(msg){
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'), 1800);
+}
+
+// ---- PWA: ಮೊಬೈಲ್ ಆಪ್ ಆಗಿ ಇನ್‌ಸ್ಟಾಲ್ ಆಗಲು ಸರ್ವಿಸ್ ವರ್ಕರ್ ನೋಂದಣಿ ----
+if('serviceWorker' in navigator){
+  window.addEventListener('load', ()=>{
+    navigator.serviceWorker.register('service-worker.js').catch(err=>{
+      console.error('Service worker registration failed:', err);
+    });
+  });
+}
+</script>
+</body>
+</html>
